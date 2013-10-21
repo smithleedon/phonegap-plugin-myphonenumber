@@ -1,5 +1,4 @@
-cordova.define("com.smithleedon.device.myphonenumber", function(require, exports, module) {/*
-
+/*
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -58,4 +57,3 @@ MyPhoneNumber.prototype.getInfo = function(successCallback, errorCallback) {
 };
 
 module.exports = new MyPhoneNumber();
-});
