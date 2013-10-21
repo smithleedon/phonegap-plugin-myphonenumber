@@ -17,7 +17,7 @@ cordova.define("com.smithleedon.device.myphonenumber", function(require, exports
  * KIND, either express or implied.  See the License for the
  * specific language governing permissions and limitations
  * under the License.
- *
+ * pix
 */
 
 var argscheck = require('cordova/argscheck'),
