@@ -1,4 +1,5 @@
-cordova.define("com.smithleedon.device", function(require, exports, module) {/*
+cordova.define("com.smithleedon.device.myphonenumber", function(require, exports, module) {/*
+
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -24,9 +25,6 @@ var argscheck = require('cordova/argscheck'),
     utils = require('cordova/utils'),
     exec = require('cordova/exec');
 
-channel.createSticky('onCordovaInfoReady');
-// Tell cordova channel to wait on the CordovaInfoReady event
-channel.waitForInitialization('onCordovaInfoReady');
 
 /**
  * This represents the mobile device, and provides properties for inspecting the model, version, UUID of the
@@ -37,16 +35,15 @@ function MyPhoneNumber() {
     this.mynumber = null;
 
     var me = this;
-
-    channel.onCordovaReady.subscribe(function() {
-        me.getInfo(function(info) {
-            me.mynumber = info.mynumber;
-            channel.onCordovaInfoReady.fire();
-        },function(e) {
-            me.available = false;
-            utils.alert("[ERROR] Error initializing Cordova: " + e);
-        });
+    console.log("me mynumber call 222222222 ");
+    
+    me.getInfo(function(info) {
+        me.mynumber = info.mynumber;
+    },function(e) {
+        me.available = false;
+        utils.alert("[ERROR] Error initializing Cordova: " + e);
     });
+    
 }
 
 /**
@@ -57,9 +54,8 @@ function MyPhoneNumber() {
  */
 MyPhoneNumber.prototype.getInfo = function(successCallback, errorCallback) {
     argscheck.checkArgs('fF', 'MyPhoneNumber.getInfo', arguments);
-    exec(successCallback, errorCallback, "getphonenumber", "getDeviceInfo", []);
+    exec(successCallback, errorCallback, "MyPhoneNumber", "getphonenumber", []);
 };
 
 module.exports = new MyPhoneNumber();
 });
-

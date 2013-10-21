@@ -10,7 +10,7 @@
 
 
     <js-module src="www/myphonenumber.js" name="MyPhoneNumber">
-        <clobbers target="window.myphonenumber" />
+        <clobbers target="myphonenumber" />
     </js-module>
 
     <!-- android -->
@@ -19,6 +19,10 @@
             <feature name="MyPhoneNumber">
                 <param name="android-package" value="com.smithleedon.device.MyPhoneNumber"/>
             </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
         </config-file>
 
         <source-file src="src/android/MyPhoneNumber.java" target-dir="src/com/smithleedon/device" />
