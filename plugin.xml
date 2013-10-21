@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+           id="com.smithleedon.device"
+      version="0.1.0">
+    <name>Calendar</name>
+    <description>Sample PhoneGap myphonenumber Plugin</description>
+    <license>MIT</license>
+    <keywords>phonegap,myphonenumber</keywords>
+
+
+    <js-module src="www/myphonenumber.js" name="MyPhoneNumber">
+        <clobbers target="window.myphonenumber" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="MyPhoneNumber">
+                <param name="android-package" value="com.smithleedon.device.MyPhoneNumber"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/MyPhoneNumber.java" target-dir="src/com/smithleedon/device" />
+     </platform>          
+</plugin>
