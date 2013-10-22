@@ -58,6 +58,7 @@ public class MyPhoneNumber extends CordovaPlugin {
         mGap = this.cordova;
         TelephonyManager mTelephonyMgr = (TelephonyManager) mGap.getActivity().getSystemService(Context.TELEPHONY_SERVICE);
         strPhoneNumber = mTelephonyMgr.getLine1Number();
+        strPhoneNumber = strPhoneNumber.replace("-", "").replace("+82", "0");
     }
 
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
