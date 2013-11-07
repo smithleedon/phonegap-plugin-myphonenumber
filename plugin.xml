@@ -3,7 +3,7 @@
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
            id="com.smithleedon.device"
       version="0.1.0">
-    <name>Calendar</name>
+    <name>MyPhoneNumber</name>
     <description>Sample PhoneGap myphonenumber Plugin</description>
     <license>MIT</license>
     <keywords>phonegap,myphonenumber</keywords>
